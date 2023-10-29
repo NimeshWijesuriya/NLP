@@ -10,15 +10,18 @@
     - Zero-shot classification is a natural language processing (NLP) technique that allows you to classify text into predefined categories or labels without the need for any training examples or labeled data for those specific categories. Hugging Face is a popular platform for NLP, and it provides access to various pre-trained language models, including GPT-3, GPT-4, and others, which can be used for zero-shot classification.
     
 
-```PYTHON
-fromtransformers import pipeline
+```python
+%%capture
+
+from transformers import pipeline
 
 classifier = pipeline("zero-shot-classification")
-classifier(
+result = classifier(
     "This is a course about the Transformers library",
-    candidate_labels=["education", "politics", "business"],
+    candidate_labels=["education", "politics", "business"]
 )
 result
+
 
 
 ```python
