@@ -11,6 +11,7 @@
     
 
 ```PYTHON
+%%capture
 fromtransformers import pipeline
 
 classifier = pipeline("zero-shot-classification")
